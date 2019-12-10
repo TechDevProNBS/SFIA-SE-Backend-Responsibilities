@@ -34,8 +34,5 @@ public class ResponsibilityController {
 		return repo.findAll();
 	}
 
-
-
-
 }
 

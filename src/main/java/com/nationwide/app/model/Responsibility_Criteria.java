@@ -16,7 +16,5 @@ public class Responsibility_Criteria {
 	public void setResponsibility_criterion(String responsibility_criterion) {
 		this.responsibility_criterion = responsibility_criterion;
 	}
-	
-	
 
 }
