@@ -29,8 +29,8 @@ public class ResponsibilityController {
 	@Autowired
 	private ResponsibilityRepository repo;
 	
-	@RequestMapping("/API/showResponsibilities")
-	public List<Responsibilities> showResponsibilities() {
+	@RequestMapping("/API/responsibilities/findAll")
+	public List<Responsibilities> findAll() {
 		return repo.findAll();
 	}
 
