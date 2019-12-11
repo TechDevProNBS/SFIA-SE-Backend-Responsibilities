@@ -30,3 +30,11 @@ spring:
 server:
   port: ${RESPONSIBILITIES_PORT}
 ---
+spring:
+  profiles: production
+  data:
+    mongodb:
+      uri: 'mongodb+srv://skill_level:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/test'
+
+server:
+  port: ${RESPONSIBILITIES_PORT}
