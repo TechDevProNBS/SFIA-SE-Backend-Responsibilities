@@ -6,7 +6,7 @@ spring:
   profiles: testing
   data: 
     mongodb:
-      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/test'
+      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/nationwide'
 
 server:
   port: ${RESPONSIBILITIES_PORT}
@@ -16,7 +16,7 @@ spring:
   profiles: development
   data: 
     mongodb:
-      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/test'
+      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/nationwide'
 
 server:
   port: ${RESPONSIBILITIES_PORT}
@@ -25,7 +25,7 @@ spring:
   profiles: staging
   data: 
     mongodb:
-      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/test'
+      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/nationwide'
 
 server:
   port: ${RESPONSIBILITIES_PORT}
@@ -34,7 +34,7 @@ spring:
   profiles: production
   data:
     mongodb:
-      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/test'
+      uri: 'mongodb+srv://responsibilities:${MONGODB_PASSWORD_RESPONSIBILITIES}@nationwide-ld1bk.azure.mongodb.net/nationwide'
 
 server:
   port: ${RESPONSIBILITIES_PORT}
