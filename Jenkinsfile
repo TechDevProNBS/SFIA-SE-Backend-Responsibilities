@@ -12,7 +12,7 @@ pipeline {
 		echo "Testing"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build --build-arg PROFILE="testing" -t="51.140.99.70:5000/sfia-responsibilities:testing" .'
+                sh 'docker image build --build-arg PROFILE="testing" --build-arg PORT="3500" -t="51.140.99.70:5000/sfia-responsibilities:testing" .'
                 sh 'docker push 51.140.99.70:5000/sfia-responsibilities:testing'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
                 }
