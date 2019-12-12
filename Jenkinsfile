@@ -12,8 +12,8 @@ pipeline {
 		echo "Testing"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-responsibilities:testing" .'
-                sh 'docker push 10.0.5.4:5000/sfia-responsibilities:testing'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-responsibilities:testing" .'
+                sh 'docker push 51.140.99.70:5000/sfia-responsibilities:testing'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
                 }
             }
@@ -29,8 +29,8 @@ pipeline {
 		echo "staging"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-responsibilities:staging" .'
-                sh 'docker push 10.0.5.4:5000/sfia-responsibilities:staging'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-responsibilities:staging" .'
+                sh 'docker push 51.140.99.70:5000/sfia-responsibilities:staging'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
                  
                 } 
@@ -47,8 +47,8 @@ pipeline {
 		echo "production"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-responsibilities:production" .'
-                sh 'docker push 10.0.5.4:5000/sfia-responsibilities:production'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-responsibilities:production" .'
+                sh 'docker push 51.140.99.70:5000/sfia-responsibilities:production'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
             }
         }
