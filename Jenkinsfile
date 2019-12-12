@@ -29,7 +29,7 @@ pipeline {
 		echo "staging"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-		sh 'docker build --build-arg PORT_NAME=$RESPONSIBILITIES_PORT --build-arg PASSWORD=$MONGODB_PASSWORD_RESPONSIBILITIES -t="51.140.99.70:5000/sfia-responsibilities:testing" .'
+		sh 'docker build --build-arg PORT_NAME=$RESPONSIBILITIES_PORT --build-arg PASSWORD=$MONGODB_PASSWORD_RESPONSIBILITIES -t="51.140.99.70:5000/sfia-responsibilities:staging" .'
                 sh 'docker push 51.140.99.70:5000/sfia-responsibilities:staging'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
                  
@@ -47,7 +47,7 @@ pipeline {
 		echo "production"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-		sh 'docker build --build-arg PORT_NAME=$RESPONSIBILITIES_PORT --build-arg PASSWORD=$MONGODB_PASSWORD_RESPONSIBILITIES -t="51.140.99.70:5000/sfia-responsibilities:testing" .'
+		sh 'docker build --build-arg PORT_NAME=$RESPONSIBILITIES_PORT --build-arg PASSWORD=$MONGODB_PASSWORD_RESPONSIBILITIES -t="51.140.99.70:5000/sfia-responsibilities:production" .'
                 sh 'docker push 51.140.99.70:5000/sfia-responsibilities:production'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
             }
