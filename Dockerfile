@@ -1,16 +1,16 @@
 FROM java:8-jdk-alpine
 
-ARG PROFILE
+ARG PORT_NAME
 
-ARG PORT
-
-ENV MY_ENV_VARIABLE=$PROFILE
+ARG PASSWORD
 
 COPY ./target/accessing-mongodb.jar  /usr/app/
 
-ENV RESPONSIBILITIES_PORT=$PORT
+ENV RESPONSIBILITIES_PORT=$PORT_NAME
 
-ENV MONGODB_PASSWORD_RESPONSIBILITIES=$MONGODB_PASSWORD_RESPONSIBILITIES
+ENV MONGODB_PASSWORD_RESPONSIBILITIES=$PASSWORD
 
-CMD java -jar -Dspring.profiles.active=$PROFILE usr/app/accessing-mongodb.jar
+ENV PROFILE="testing"
+
+ENTRYPOINT java -jar -Dspring.profiles.active=$PROFILE usr/app/accessing-mongodb.jar
 
